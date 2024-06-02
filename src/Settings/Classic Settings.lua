@@ -38,6 +38,7 @@ local GeneralSettingsBase = {
 		["DebugMode"] = false,
 		["FactionMode"] = false,
 		["AccountWide:Achievements"] = app.GameBuildVersion >= 40000,
+		["AccountWide:TempCollectibles"] = app.GameBuildVersion >= 40000,
 		["AccountWide:AzeriteEssences"] = true,
 		["AccountWide:BattlePets"] = true,
 		["AccountWide:CharacterUnlocks"] = true,
@@ -58,6 +59,7 @@ local GeneralSettingsBase = {
 		["AccountWide:Toys"] = true,
 		["AccountWide:Transmog"] = true,
 		["Thing:Achievements"] = true,
+		["Thing:TempCollectibles"] = true,
 		["Thing:AzeriteEssences"] = app.GameBuildVersion >= 80000,
 		["Thing:BattlePets"] = true,
 		["Thing:CharacterUnlocks"] = app.IsRetail,	-- CRIEVE NOTE: This class might be up to the chopping block with a thing I have on my todo list. I'll leave it for now.
@@ -87,6 +89,7 @@ local GeneralSettingsBase = {
 		["Show:CollectedThings"] = false,
 		["Show:OnlyActiveEvents"] = true,
 		["Show:PetBattles"] = true,
+		["Show:TempCollectibles"] = true,
 		["Show:UnavailablePersonalLoot"] = true,
 		["Hide:PvP"] = false,
 		["Dynamic:Style"] = 1,

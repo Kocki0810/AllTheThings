@@ -182,6 +182,8 @@ L.SETTINGS_MENU = {
 		STRANGER_THINGS_LABEL = "Stranger Things";
 		ACHIEVEMENTS_CHECKBOX = ACHIEVEMENTS;
 		ACHIEVEMENTS_CHECKBOX_TOOLTIP = "Enable this option to track achievements.";
+		TEMP_COLLECTIBLES_CHECKBOX = "Temporary Collectibles";
+		TEMP_COLLECTIBLES_CHECKBOX_TOOLTIP = "Enable this setting if you want to track things that will be removed in the future.";
 		APPEARANCES_CHECKBOX = "Appearances";
 		APPEARANCES_CHECKBOX_TOOLTIP = "Enable this option to track appearance acquisition.\n\nNOTE: Disabling this option also disables all fanfares and acquisition logic.  You can use this toggle as a way to prevent lag spikes while doing important group content, but bear in mind the computation will need to occur once re-enabled.";
 		BATTLE_PETS_CHECKBOX = "Battle Pets";
@@ -234,6 +236,7 @@ L.SETTINGS_MENU = {
 
 		-- Account-Wide Checkboxes
 		ACCOUNT_WIDE_ACHIEVEMENTS_TOOLTIP = "Achievement tracking is usually Account-Wide, but there are a number of achievements exclusive to specific classes and races that you can't get on your main.";
+		ACCOUNT_WIDE_TEMP_COLLECTIBLES_TOOLTIP = "Enable this setting if you want to track things that will be removed in the future.";
 		ACCOUNT_WIDE_APPEARANCES_TOOLTIP = "Transmog should be collected account wide. Certain items cannot be learned by every class, so ATT will do its best to only show you things that you can collect on your current character.";
 		ACCOUNT_WIDE_AZERITE_ESSENCES_TOOLTIP = "Azerite Essences cannot technically be collected and used Account-Wide, but if you only care about collecting them on your main character then you may prefer tracking them Account-Wide.";
 		ACCOUNT_WIDE_BATTLE_PETS_TOOLTIP = "Companion pets can be collected on multiple characters and realistically would require that you have an insane amount of bag space in order to collect them all on one character.\n\nWe recommend you keep this turned on, but you do you fam.";

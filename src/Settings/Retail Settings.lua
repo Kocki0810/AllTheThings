@@ -5,6 +5,7 @@ local settings = app.Settings;
 -- Settings Class
 local Things = {
 	"Achievements",
+	"TempCollectibles",
 	"AzeriteEssences",
 	"BattlePets",
 	"CharacterUnlocks",
@@ -38,6 +39,7 @@ local GeneralSettingsBase = {
 		["DebugMode"] = false,
 		["FactionMode"] = false,
 		["AccountWide:Achievements"] = app.GameBuildVersion >= 40000,
+		["AccountWide:TempCollectibles"] = app.GameBuildVersion >= 40000,
 		["AccountWide:AzeriteEssences"] = true,
 		["AccountWide:BattlePets"] = true,
 		["AccountWide:CharacterUnlocks"] = true,
@@ -58,6 +60,7 @@ local GeneralSettingsBase = {
 		["AccountWide:Toys"] = true,
 		["AccountWide:Transmog"] = true,
 		["Thing:Achievements"] = true,
+		["Thing:TempCollectibles"] = true,
 		["Thing:AzeriteEssences"] = app.GameBuildVersion >= 80000,
 		["Thing:BattlePets"] = true,
 		["Thing:CharacterUnlocks"] = app.IsRetail,	-- CRIEVE NOTE: This class might be up to the chopping block with a thing I have on my todo list. I'll leave it for now.
@@ -89,6 +92,7 @@ local GeneralSettingsBase = {
 		["Show:PetBattles"] = true,
 		["Show:UnavailablePersonalLoot"] = true,
 		["Hide:PvP"] = false,
+		["Show:TempCollectibles"] = true,
 		["Dynamic:Style"] = 1,
 		["CC:SL_COV_KYR"] = false,
 		["CC:SL_COV_VEN"] = false,
@@ -1385,6 +1389,11 @@ settings.UpdateMode = function(self, doRefresh)
 		filterSet.PetBattles()
 	else
 		filterSet.PetBattles(true)
+	end
+	if self:Get("Show:TempCollectibles") then
+		filterSet.Set("Show:TempCollectibles", false)
+	else
+		filterSet.Set("Show:TempCollectibles", true)
 	end
 
 	if self:Get("Show:UnavailablePersonalLoot") then

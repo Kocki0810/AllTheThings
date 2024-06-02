@@ -26,6 +26,7 @@ settings:Hide();
 -- Common Settings
 settings.AccountWide = setmetatable({
 	Achievements = true,
+	TempCollectibles = true,
 	BattlePets = true,
 	Deaths = true,
 	Exploration = true,
@@ -50,6 +51,7 @@ settings.AccountWide = setmetatable({
 end});
 settings.Collectibles = {
 	Achievements = true,
+	TempCollectibles = true,
 	BattlePets = true,
 	Exploration = true,
 	FlightPaths = true,

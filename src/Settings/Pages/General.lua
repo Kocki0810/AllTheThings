@@ -354,6 +354,12 @@ child:CreateTrackingCheckbox("ACHIEVEMENTS", "Achievements", app.GameBuildVersio
 	:AlignAfter(accwideCheckboxAchievements)
 accwideCheckboxAchievements:SetPoint("TOPLEFT", headerGeneralThings, "BOTTOMLEFT", -2, 0)
 
+-- local accwideCheckboxTempCollectibles = 
+-- child:CreateAccountWideCheckbox("TEMP_COLLECTIBLES", "TempCollectibles")
+-- 	:AlignBelow(accwideCheckboxAchievements)
+-- child:CreateTrackingCheckbox("TEMP_COLLECTIBLES", "TempCollectibles", app.GameBuildVersion >= 30000) -- Official Support added with Wrath
+-- 	:AlignAfter(accwideCheckboxTempCollectibles);
+
 local accwideCheckboxCharacterUnlocks;
 if app.IsRetail then
 -- Crieve doesn't like this class and thinks the functionality should remain on the Quest, Item, or Spell classes.
@@ -636,6 +642,23 @@ function(self)
 end)
 checkboxShowPvP:SetATTTooltip(L.SHOW_PVP_CHECKBOX_TOOLTIP)
 checkboxShowPvP:AlignBelow(checkboxShowPetBattles)
+
+local checkboxTempCollectibles = child:CreateCheckBox("|T"..app.asset("Category_WorldDrops")..":0|t " .. app.ccColors.Insane .. L.TEMP_COLLECTIBLES_CHECKBOX,
+function(self)
+	self:SetChecked(settings:Get("Show:TempCollectibles"))
+	if app.MODE_DEBUG then
+		self:Disable()
+		self:SetAlpha(0.4)
+	else
+		self:Enable()
+		self:SetAlpha(1)
+	end
+end,
+function(self)
+	settings:Set("Show:TempCollectibles", self:GetChecked())
+end)
+checkboxTempCollectibles:SetATTTooltip(L.TEMP_COLLECTIBLES_CHECKBOX_TOOLTIP)
+checkboxTempCollectibles:AlignBelow(checkboxShowPvP);
 
 -- Expansion Things
 if app.GameBuildVersion >= 60000 then

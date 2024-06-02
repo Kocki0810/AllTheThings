@@ -202,6 +202,11 @@ api.Set.ItemUnbound = function(active, nested)
 end
 api.Get.ItemUnbound = function() return SettingsFilterItemUnbound == api.Filters.ItemUnbound end
 
+DefineToggleFilter("TempCollectibles", AccountFilters,
+function(item)
+	return not item.rwp or false;
+end);
+
 -- FilterID
 DefineToggleFilter("FilterID", CharacterFilters,
 function(item)
